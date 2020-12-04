@@ -11,7 +11,7 @@ setup(
         'dataclasses'  # not included in Python <= 3.7
     ],
     author="Shinyhero36",
-    setup_requires=['setuptools_scm'],  # Also include Ressources files
+    setup_requires=['setuptools_scm'],  # Automatically include Ressources files
     include_package_data=True,
     packages=['leboncoin_api_wrapper'],
 )
