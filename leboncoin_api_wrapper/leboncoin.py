@@ -1,65 +1,9 @@
-from typing import List
-
-from dataclasses import dataclass
-
 import json
 import os
 #  from pathlib import Path
 
 import requests
 from cloudscraper import create_scraper
-
-
-@dataclass
-class Advertisement:
-    """
-    This class represent an ad with the following attributes
-    """
-    list_id: str
-    first_publication_date: str
-    index_date: str
-    status: str
-    category_id: str
-    category_name: str
-    subject: str
-    body: str
-    ad_type: str
-    url: str
-    price: List[int]
-    price_calendar: str
-    images: dict
-    attributes: List[dict]
-    location: dict
-    owner: dict
-    options: dict
-    has_phone: bool
-
-    # noinspection PyTypeChecker
-    def __post_init__(self):
-        self.price = self.price[0]
-
-
-class Results:
-    def __init__(self, data):
-        self._ = data
-
-    def ads(self):
-        """
-        :return: A list of ads
-        """
-        return [Advertisement(**ad) for ad in self._["ads"]]
-
-    def shippable_ads(self):
-        """
-        :return: Return a list of shippable product
-        """
-        return [Advertisement(**ad) for ad in self._["ads_shippable"]]
-
-    def pprint(self):
-        print(json.dumps(self._, indent=4))
-
-    def print(self):
-        print(self._)
 
 
 # noinspection PyTypeChecker,PyPep8Naming
@@ -138,8 +82,9 @@ class Leboncoin:
         url = f"https://api.leboncoin.fr/api/parrot/v1/complete?q={query.replace(' ', '%20')}"
         anti_captcha = create_scraper(browser="chrome")
         res = anti_captcha.get(url).json()
+        print(type(res))
         if res:
-            assert isinstance(res, List), f"Unexpected answer received from API: {res!r}"
+            assert isinstance(res, list), f"Unexpected answer received from API: {res!r}"
             return str(res[0]["cat_id"])
         else:
             # No category returned
@@ -166,4 +111,4 @@ class Leboncoin:
             }
         )
         r.raise_for_status()
-        return Results(data=r.json())
+        return r.json()
