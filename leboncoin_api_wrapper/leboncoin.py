@@ -73,9 +73,9 @@ class Leboncoin:
         assert lat and lng and radius
         assert radius >= 10, "Radius must be >= 10"
         self._payload["filters"]["location"]['area'] = {}
-        self._payload["filters"]["location"]['area']['lat'] = lat
-        self._payload["filters"]["location"]['area']['lng'] = lng
-        self._payload["filters"]["location"]['area']['radius'] = radius * 1000  # radius in API is in meters
+        self._payload["filters"]["location"]['area']['lat'] = float(lat)
+        self._payload["filters"]["location"]['area']['lng'] = float(lng)
+        self._payload["filters"]["location"]['area']['radius'] = int(radius * 1000)  # radius in API is in meters
 
     @staticmethod
     def _get_category(query):
