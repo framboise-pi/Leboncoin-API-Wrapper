@@ -8,7 +8,6 @@ setup(
     install_requires=[
         'requests >= 2.25.0',
         'cloudscraper >= 1.2.48',
-        'dataclasses'  # not included in Python <= 3.7
     ],
     author="Shinyhero36",
     setup_requires=['setuptools_scm'],  # Automatically include Ressources files
