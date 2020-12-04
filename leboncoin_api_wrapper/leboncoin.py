@@ -123,6 +123,16 @@ class Leboncoin:
                     "region_id": dept["region_id"]
                 }]
 
+    def setLocation(self, lat: float, lng: float, radius: int):
+        """ Radius (in kilometers) must be >= 10
+        """
+        assert lat and lng and radius
+        assert radius >= 10, "Radius must be >= 10"
+        self._payload["filters"]["location"]['area'] = {}
+        self._payload["filters"]["location"]['area']['lat'] = lat
+        self._payload["filters"]["location"]['area']['lng'] = lng
+        self._payload["filters"]["location"]['area']['radius'] = radius * 1000  # radius in API is in meters
+
     @staticmethod
     def _get_category(query):
         url = f"https://api.leboncoin.fr/api/parrot/v1/complete?q={query.replace(' ', '%20')}"
