@@ -4,7 +4,7 @@ setup(
     name='leboncoin-api-wrapper',
     url="https://github.com/Shinyhero36/Leboncoin-API-Wrapper",
     version='0.1',
-    license='MIT',
+    license='GNU General Public License v3.0',
     install_requires=[
         'requests >= 2.25.0',
         'cloudscraper >= 1.2.48',
