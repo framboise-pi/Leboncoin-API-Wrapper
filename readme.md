@@ -1,6 +1,6 @@
 # Leboncoin API Wrapper [![PyPI](https://img.shields.io/pypi/v/leboncoin-api-wrapper)](https://pypi.org/project/leboncoin-api-wrapper/)
 
-Allow easy acces to leboncoin api using python
+Allow easy access to leboncoin api using python
 
 ## Installation
 ```bash
