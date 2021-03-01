@@ -3,7 +3,14 @@
 Allow easy access to leboncoin api using python
 
 ### THIS FORK
-As for a use with a Raspberry, I made some changes this way - around f" and f'
+As for a use with a Raspberry, I made some changes this way - around f" and f'+ setLocation issue
+<br>modif are within :
+    <ul>
+    <li>leboncoin.py</li>
+    <li>cloudscraper/__init__.py</li>
+    <li>cloudscraper/captcha/__init__.py</li>
+    <li>cloudscraper/user_agent/__init__.py</li>
+    </ul>
 
 ## Installation
 ```bash
