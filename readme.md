@@ -12,9 +12,11 @@ As for a use with a Raspberry, I made some changes this way - around f" and f'+ 
     <li>cloudscraper/captcha/__init__.py</li>
     <li>cloudscraper/user_agent/__init__.py</li>
     </ul>
-    
-
-
+#### How ?
+* do the 'normal installation' via pip
+* modif the files with those from this fork
+<i>(/usr/local/lib/python2.7/dist-packages)</i>/leboncoin_api_wrapper
+<i>(/usr/local/lib/python2.7/dist-packages)</i>/cloudscraper/...
 ## Installation
 ```bash
 pip install leboncoin-api-wrapper
