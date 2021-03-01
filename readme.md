@@ -2,6 +2,9 @@
 
 Allow easy access to leboncoin api using python
 
+### THIS FORK
+As for a use with a Raspberry, I made some changes this way - around f" and f'
+
 ## Installation
 ```bash
 pip install leboncoin-api-wrapper
